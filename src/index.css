@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:wght@400;500;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --default-font-family: "Inter", sans-serif;
+}
+
+@layer components {
+  .mainContainer {
+    @apply flex justify-center h-full w-full lg:flex-row lg:items-start;
+  }
+  .secondaryContainer {
+    @apply max-w-xl h-screen overflow-hidden p-5 gap-y-5 flex flex-col lg:mr-5 lg:w-[70%] relative bg-linear-to-b from-blue-50 to-pink-50 drop-shadow-2xl rounded-2xl w-[95%];
+  }
+  .secondaryContainer2 {
+    @apply max-w-xl h-screen md:max-w-4xl md:px-20 h-screen p-5 overflow-hidden gap-y-5 flex flex-col lg:w-[95%] relative bg-linear-to-b from-blue-50 to-pink-50 drop-shadow-2xl rounded-2xl w-[95%];
+  }
+  .cardContainer {
+    @apply flex flex-row items-center justify-center gap-5 lg:hidden;
+  }
+  .card {
+    @apply w-[50%] h-auto border border-gray-100 min-w-25 p-3 rounded-2xl bg-white backdrop-blur-md pl-5 shadow-gray-500 shadow-md/10  flex flex-col items-start;
+  }
+  .inputbox {
+    @apply w-full pl-10 items-center flex h-[clamp(4rem,5vw,4rem)] text-[clamp(0.75rem,1.5vw,0.9rem)] rounded-2xl bg-linear-to-r from-cyan-100 to-olive-100 backdrop-blur-2xl shadow-gray-500 shadow-md/10;
+  }
+  .inputbox2 {
+    @apply w-full px-5 items-center flex h-[clamp(2.5rem,5vw,5rem)] text-[clamp(0.75rem,1.5vw,0.9rem)] rounded-2xl focus:outline-purple-100 focus:outline-2 border-gray-200 border bg-white;
+  }
+  .tabContainer {
+    @apply flex gap-x-[clamp(0.25rem,3vw,2rem)] w-auto h-auto min-h-10  pl-2 overflow-x-scroll;
+  }
+  .inactiveTab {
+    @apply h-[clamp(2rem,2vw,2.5rem)] text-[clamp(0.9rem,2vw,1rem)] text-center rounded-4xl px-2 flex items-center justify-center bg-[#ffffffbe] text-shadow-sm/10 text-shadow-gray-300 transition-all duration-300 ease-out hover:shadow-sm/10 active:scale-95;
+  }
+  .activeTab {
+    @apply h-[clamp(2rem,2vw,2.5rem)] text-[clamp(0.9rem,2vw,1rem)] text-center rounded-4xl px-2 flex items-center justify-center scale-105 shadow-md/10 transition-all duration-300 ease-out;
+  }
+  .task {
+    @apply p-2 w-full rounded-2xl bg-white backdrop-blur-md pl-5 shadow-gray-500 shadow-md/10;
+  }
+  .taskContainer {
+    @apply grid grid-cols-1 flex-1 md:grid-cols-2 gap-4 items-start overflow-y-scroll bg-linear-to-r from-purple-100 to-pink-100 shadow-md/15 p-3 rounded-2xl auto-rows-min;
+  }
+  .category {
+    @apply rounded-4xl text-xs py-1 px-2;
+  }
+  .addBtn {
+    @apply fixed bottom-6 right-6 flex h-[clamp(1.5em,4vw,5em)] w-[clamp(1.5em,4vw,5em)] text-[clamp(2em,3vw,5em)] font-extralight items-center justify-center rounded-full text-white bg-linear-to-r from-purple-300 to-pink-300 shadow-lg hover:scale-105 transition-all duration-300 ease-out;
+  }
+  .checkBtn {
+    @apply rounded-4xl w-4 border h-4 mr-3 border-gray-500 active:bg-gray-500 hover:bg-gray-200 transition-all duration-300 ease-in-out hover:scale-105 active:scale-90 hover:cursor-pointer;
+  }
+  .overviewMainContainer {
+    @apply hidden lg:block lg:w-[30%] p-5 m-0 mt-10 rounded-2xl bg-white backdrop-blur-md pl-5 shadow-gray-500 shadow-lg/30;
+  }
+  .overviewCardsContainer {
+    @apply flex flex-col gap-y-5;
+  }
+  .overviewCard {
+    @apply w-full h-auto px-2 py-2 shadow-lg/5 rounded-xl backdrop-blur-3xl text-xs font-light;
+  }
+  .customHr {
+    @apply w-[80%] border h-[0.1px] opacity-5;
+  }
+  .quickstatsContainer {
+    @apply flex flex-col justify-center gap-y-1 text-xs;
+  }
+  .subheading {
+    @apply mb-2;
+  }
+  .activeCategory {
+    @apply w-full px-2 py-3 shadow-md rounded-xl backdrop-blur-3xl text-xs font-normal scale-105 transition-all duration-300 ease-out;
+  }
+  .inactiveCategory {
+    @apply bg-white text-black w-full px-2 py-3 rounded-xl text-xs font-normal backdrop-blur-3xl;
+  }
+  .inactivePriority {
+    @apply w-full flex items-center justify-center rounded-2xl border border-gray-200 bg-white text-center h-10;
+  }
+  .activePriority {
+    @apply w-full flex items-center justify-center rounded-2xl border border-gray-200 h-10 scale-105 transition-all duration-300 ease-out shadow-md;
+  }
+  .inactiveColorTag {
+    @apply h-10 w-10 rounded-4xl;
+  }
+  .activeColorTag {
+    @apply h-10 w-10 rounded-4xl scale-110 transition-all duration-300 ease-out;
+  }
+  .saveContainer {
+    @apply fixed w-screen h-15 bottom-0 backdrop-blur-sm bg-white/60;
+  }
+  .saveBtn {
+    @apply bg-linear-to-r from-purple-400 to-pink-400 w-[clamp(10rem,100vw,45rem)] h-auto py-2 text-[clamp(1rem,2vw,2rem)] rounded-xl backdrop-blur-xs opacity-60 disabled:opacity-40 enabled:hover:scale-105 transition-all duration-300 ease-out;
+  }
+  .progressText {
+    @apply text-[clamp(0.5rem,3vw,0.8rem)] mb-2 font-light;
+  }
+  .menu {
+    @apply shadow-xl/10 border border-white rounded-xl p-2 mt-2 w-auto absolute bg-linear-to-t from-pink-100 to-purple-100 z-10 transition-all duration-300 ease-out flex flex-col items-start;
+  }
+}
