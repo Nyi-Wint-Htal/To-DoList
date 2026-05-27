@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+type Priority = "High" | "Medium" | "Low";
+
 type Task = {
   id: number;
   title: string;
@@ -9,7 +11,7 @@ type Task = {
   categoryColor: string;
   date: string;
   time: string;
-  priority: string;
+  priority: Priority;
   colorTag: string;
 };
 const Homescreen = () => {
@@ -106,12 +108,27 @@ const Homescreen = () => {
     return new Date() > taskDateTime;
   };
 
-  const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [sortBy, setSortBy] = useState("date");
+  const sortedTasks = [...Tasks].sort((a, b) => {
+    if (sortBy === "date") {
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
+    }
 
-  const sortedTasksByDate = [...tasks].sort(
-    (b, a) => new Date(a.date).getTime() - new Date(b.date).getTime(),
-  );
+    if (sortBy === "priority") {
+      const priorityOrder: Record<Priority, number> = {
+        High: 1,
+        Medium: 2,
+        Low: 3,
+      };
 
+      return priorityOrder[a.priority] - priorityOrder[b.priority];
+    }
+
+    if (sortBy == "alphabet") {
+      return a.title.localeCompare(b.title);
+    }
+    return 0;
+  });
   return (
     <>
       <main>
@@ -188,32 +205,24 @@ const Homescreen = () => {
               >
                 Work
               </button>
-              <div className="ml-auto">
-                <button
-                  className="inactiveTab"
-                  onClick={() => {
-                    isOpenMenu ? setIsOpenMenu(false) : setIsOpenMenu(true);
-                  }}
+              <div className="ml-auto flex flex-row items-center justify-center">
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="sortSelect"
                 >
-                  <h2>Sort By</h2>
-                  <i className="fa-solid fa-up-down"></i>
-                </button>
-                {isOpenMenu && (
-                  <div className="menu">
-                    <button onClick={() => setTasks(sortedTasksByDate)}>
-                      Date
-                    </button>
-                    <button>Priority</button>
-                    <button>Alphabet</button>
-                  </div>
-                )}
+                  <option value="date">Date</option>
+                  <option value="priority">Priority</option>
+                  <option value="alphabet">Alphabet</option>
+                </select>
+                <i className="fa-solid fa-arrow-down text-pink-400"></i>
               </div>
             </section>
             <section className="taskContainer">
-              {Tasks.map((task) => (
+              {sortedTasks.map((task) => (
                 <section className="task" key={task.id}>
-                  <div className="flex flex-row items-center text-center justify-between">
-                    <div className="flex items-center">
+                  <div className="flex flex-row items-center text-center">
+                    <div className="flex items-center mr-auto">
                       <button
                         id="task"
                         onClick={() => handleCompleteTask(task.id)}
@@ -232,7 +241,7 @@ const Homescreen = () => {
                     <p
                       className={`text-xs ${isTaskOverdue(task.date, task.time) ? "text-red-400" : "text-gray-400"}`}
                     >
-                      {task.time}
+                      {task.time} / {task.date.substring(5)}
                     </p>
                   </div>
                 </section>

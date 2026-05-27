@@ -28,7 +28,7 @@
     @apply w-full px-5 items-center flex h-[clamp(2.5rem,5vw,5rem)] text-[clamp(0.75rem,1.5vw,0.9rem)] rounded-2xl focus:outline-purple-100 focus:outline-2 border-gray-200 border bg-white;
   }
   .tabContainer {
-    @apply flex gap-x-[clamp(0.25rem,3vw,2rem)] w-auto h-auto min-h-10  pl-2 overflow-x-scroll;
+    @apply flex items-center gap-x-[clamp(0.25rem,3vw,2rem)] w-auto h-auto min-h-10  pl-2 overflow-x-scroll;
   }
   .inactiveTab {
     @apply h-[clamp(2rem,2vw,2.5rem)] text-[clamp(0.9rem,2vw,1rem)] text-center rounded-4xl px-2 flex items-center justify-center bg-[#ffffffbe] text-shadow-sm/10 text-shadow-gray-300 transition-all duration-300 ease-out hover:shadow-sm/10 active:scale-95;
@@ -97,6 +97,9 @@
     @apply text-[clamp(0.5rem,3vw,0.8rem)] mb-2 font-light;
   }
   .menu {
-    @apply shadow-xl/10 border border-white rounded-xl p-2 mt-2 w-auto absolute bg-linear-to-t from-pink-100 to-purple-100 z-10 transition-all duration-300 ease-out flex flex-col items-start;
+    @apply shadow-xl/10 border border-white rounded-xl w-auto bg-linear-to-t from-pink-100 to-purple-100 z-10 transition-all duration-300 ease-out flex flex-col items-start;
+  }
+  .sortSelect {
+    @apply h-[clamp(2rem,2vw,2.5rem)] text-[clamp(0.9rem,2vw,1rem)] rounded-4xl px-4 bg-[#ffffffbe] focus:outline-none appearance-none hover:shadow-sm/15 transition-all duration-300 ease-out;
   }
 }
