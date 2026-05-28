@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 type CompletedTasks = {
   id: number;
@@ -45,7 +46,13 @@ const CompletedTask = () => {
     localStorage.setItem("tasks", JSON.stringify(updatedActiveTasks));
   };
   return (
-    <main className="mainContainer">
+    <motion.main
+      className="mainContainer"
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -15 }}
+      transition={{ duration: 0.25 }}
+    >
       <section className="secondaryContainer2">
         <div className="flex gap-x-5 sticky top-0 left-0 backdrop-blur-sm h-15 rounded-3xl w-full">
           <Link to={"/"}>
@@ -115,7 +122,7 @@ const CompletedTask = () => {
           ))}
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 };
 

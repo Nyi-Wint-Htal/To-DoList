@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 type Priority = "High" | "Medium" | "Low";
 
@@ -131,7 +132,12 @@ const Homescreen = () => {
   });
   return (
     <>
-      <main>
+      <motion.main
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -15 }}
+        transition={{ duration: 0.25 }}
+      >
         <div id="wholescreen" className="mainContainer">
           <section id="homescreen" className="secondaryContainer">
             <section>
@@ -292,7 +298,7 @@ const Homescreen = () => {
             </Link>
           </div>
         </div>
-      </main>
+      </motion.main>
     </>
   );
 };

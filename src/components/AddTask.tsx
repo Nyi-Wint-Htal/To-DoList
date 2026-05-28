@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const AddTask = () => {
   const currentDate = new Date().toISOString().split("T")[0];
@@ -35,7 +36,13 @@ const AddTask = () => {
   };
 
   return (
-    <main className="mainContainer">
+    <motion.main
+      className="mainContainer"
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -15 }}
+      transition={{ duration: 0.25 }}
+    >
       <section className="secondaryContainer pb-20 overflow-y-scroll scroll-smooth">
         <div className="flex gap-x-5 sticky top-0 backdrop-blur-sm h-15 rounded-3xl w-full">
           <Link to={"/"}>
@@ -262,7 +269,7 @@ const AddTask = () => {
           </button>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 };
 
