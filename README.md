@@ -28,14 +28,12 @@ A modern task management application built with React, TypeScript, and Tailwind 
 - Vite
 
 ## Screenshots
-
-### Main Dashboard
-
-(Add screenshot here)
-
-### Task Management
-
-(Add screenshot here)
+<img width="1440" height="810" alt="Screenshot 2026-06-01 at 11 54 33 AM" src="https://github.com/user-attachments/assets/0b341f9c-848a-4921-95ed-9c2857658162" />
+<img width="1440" height="806" alt="Screenshot 2026-06-01 at 11 54 40 AM" src="https://github.com/user-attachments/assets/e8971233-7c5c-43a1-8909-31b47472fc47" />
+<img width="1440" height="807" alt="Screenshot 2026-06-01 at 11 54 22 AM" src="https://github.com/user-attachments/assets/84c359c8-2d46-4963-9504-0defbe792c54" />
+<img width="1440" height="811" alt="Screenshot 2026-06-01 at 11 53 09 AM" src="https://github.com/user-attachments/assets/99821bd6-54a7-4b78-bfaa-0d0c1a0cab36" />
+<img width="1440" height="809" alt="Screenshot 2026-06-01 at 11 54 02 AM" src="https://github.com/user-attachments/assets/cc750be6-fb68-4c33-a1cb-21b0daf51b88" />
+<img width="1440" height="811" alt="Screenshot 2026-06-01 at 11 54 13 AM" src="https://github.com/user-attachments/assets/9695f05d-7d2f-4da1-a2d2-bd71addf4b53" />
 
 ## Installation
 
