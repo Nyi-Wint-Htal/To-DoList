@@ -4,21 +4,21 @@ A modern task management application built with React, TypeScript, and Tailwind 
 
 ## Features
 
-✅ Create tasks
+Create tasks
 
-✅ Delete tasks
+Delete tasks
 
-✅ Mark tasks as completed
+Mark tasks as completed
 
-✅ Set task priorities
+Set task priorities
 
-✅ Add due dates
+Add due dates
 
-✅ Filter tasks
+Filter tasks
 
-✅ Progress tracking
+Progress tracking
 
-✅ Responsive user interface
+Responsive user interface
 
 ## Tech Stack
 
@@ -71,14 +71,6 @@ This project helped me practice:
 - Form handling
 - Filtering and sorting data
 - Responsive design with Tailwind CSS
-
-## Future Improvements
-
-- Drag and drop tasks
-- Dark mode
-- Data persistence with localStorage
-- Cloud synchronization
-- User authentication
 
 ## Live Demo
 
